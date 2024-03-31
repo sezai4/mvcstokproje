@@ -1,0 +1,31 @@
+﻿@using ödev_3.Models.Entity;
+@model List<TBLMUSTERILER>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>MÜŞTERİ İD</th>
+            <th>MÜŞTERİ ADI</th>
+            <th>MÜŞTERİ SOYADI</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var mus in Model)
+        {
+        <tr>
+            <td>@mus.MUSTERIıD</td>
+            <td>@mus.MUSTERIAD</td>
+            <td>@mus.MUSTERISOYAD</td>
+            <td><a href="/MUSTERI/sil/@mus.MUSTERIıD" class="btn btn-danger">SİL</a></td>
+            <td><a href="/MUSTERI/MusteriGetir/@mus.MUSTERIıD" class="btn btn-success">GÜNCELLE</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+<a href="/musteri/Yenimusteri/" class="btn btn-primary">YENİ MÜŞTERİ EKLE</a>
